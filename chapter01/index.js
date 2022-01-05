@@ -56,3 +56,41 @@ console.log(betterWords);
 let betterWords2=words.map(x=>x+'ish');
 console.log(betterWords2);
 
+// Filter Elements from an array
+function findBigNumbers (number){
+    return number > 100;
+}
+
+let bigNumbers=numbers.filter(findBigNumbers);
+console.log(bigNumbers);
+
+// sneaky! numbers array is being copied back into itself;
+numbers=numbers.filter(x=>x<100)
+
+console.log(numbers);
+
+
+// Reducing Arrary Elements to s Single Value
+function addNumbersTogether(a,b){
+    return a+b;
+}
+
+let total=numbers.reduce(addNumbersTogether);
+console.log(total);
+
+// compact version:
+total=numbers.reduce((a,b)=>a+b);
+console.log(total);
+
+// with second optional paramter:the initial value to start with.
+total=numbers.reduce((a,b)=>a+b,100);
+console.log(total);
+
+// 2D array flatten into a 1D array
+function flattenArray(a,b){
+    return a.concat(b)
+}
+let numbers2D = [[73,19],[2,144],[43,7]];
+let numbers1D = numbers2D.reduce(flattenArray);
+
+console.log(numbers1D);
